@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>首页</title>
+    <link th:href="@{css/heards.css}" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<div class ="all">
+
+    <table >
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>age</th>
+        </tr>
+
+        <tr th:each="p:${dao}">
+            <td th:text="${p.id}"></td>
+            <td th:text="${p.name}"></td>
+            <td th:text="${p.age}"></td>
+            <td><a th:href="@{/delete(id=${p.id})}">删除</a></td>
+            <td><a th:href="@{/update(id=${p.id})}">修改</a></td>
+        </tr>
+    </table>
+
+    <div>
+        <a th:href="@{/toadd}">添加</a>
+    </div>
+
+    <div>
+        <a th:href="@{/fdelete}">自定义删除</a>
+    </div>
+
+</div>
+
+
+</body>
+</html>

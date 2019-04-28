@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>增加</title>
+    <!--<link rel="stylesheet" type="text/css" href="/static/css/insert.css">-->
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #all{
+            width: 800px;
+            height: 500px;
+            margin: 0 auto;
+            overflow:scroll;
+            background-image: url("../images/main.jpg");
+        }
+
+        form{
+            margin: 0 auto;
+            padding-top: 150px;
+            line-height: 30px;
+            text-align:center;
+
+        }
+        table{
+            margin: 0 auto;
+        }
+
+        input{
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            padding: 7px 0px 7px 5px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+            -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s
+        }
+        input:focus{
+            border-color: #66afe9;
+            outline: 0;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+
+<div id ="all">
+    <form th:action="@{/useradd}"  method="post">
+        <table class="as">
+
+            <tr>
+                <td>姓名</td>
+                <td><input type="text" name="username"></td>
+            </tr>
+
+            <tr>
+                <td>密码</td>
+                <td><input type="password" name="password"></td>
+            </tr>
+
+            <tr>
+                <td>年龄</td>
+                <td><input type="text" name="age"></td>
+            </tr>
+
+            <tr>
+                <td>性别</td>
+                <td><input type="text" name="sex"></td>
+            </tr>
+
+            <tr>
+                <td>电话</td>
+                <td><input type="text" name="iphone"></td>
+            </tr>
+
+            <tr>
+                <td><input type="reset" value="重置"></td>
+                <td><input type="submit" value="提交"></td>
+            </tr>
+
+        </table>
+    </form>
+
+</div>
+
+
+</body>
+</html>
